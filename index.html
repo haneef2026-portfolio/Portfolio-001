@@ -1,34 +1,882 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Haneef's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Haneef | Student & Future Cybersecurity Professional</title>
+
+    <meta name="description"
+          content="Haneef's personal portfolio showcasing cybersecurity, technology, research, data and design projects.">
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 20, 0.95);
+            border-bottom: 1px solid #202832;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #5eead4;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8c1cc;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #5eead4;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #2b4c4a;
+            border-radius: 999px;
+            color: #5eead4;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #5eead4;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #aeb8c4;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 1px solid #5eead4;
+        }
+
+        .button-primary {
+            background: #5eead4;
+            color: #07110f;
+        }
+
+        .button-secondary {
+            color: #5eead4;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: #5eead4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: #9faab6;
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-box {
+            background: #11171e;
+            border: 1px solid #202832;
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .about-box p {
+            color: #b9c2cc;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            background: #11171e;
+            border: 1px solid #202832;
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .skill h3 {
+            margin-bottom: 7px;
+        }
+
+        .skill p {
+            color: #9faab6;
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #11171e;
+            border: 1px solid #202832;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #5eead4;
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #9faab6;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #5eead4;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           GOALS
+        ========================= */
+
+        .goals {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .goal {
+            padding: 25px;
+            border-left: 3px solid #5eead4;
+            background: #11171e;
+        }
+
+        .goal h3 {
+            margin-bottom: 8px;
+        }
+
+        .goal p {
+            color: #9faab6;
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            text-align: center;
+            background: #11171e;
+            border: 1px solid #202832;
+            border-radius: 14px;
+            padding: 50px 25px;
+        }
+
+        .contact-box p {
+            color: #9faab6;
+            max-width: 600px;
+            margin: 10px auto 25px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #202832;
+            padding: 30px 0;
+            text-align: center;
+            color: #74808c;
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .projects-grid,
+            .skills-grid,
+            .goals {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <h1>Haneef</h1>
 
-    <h2>Student | Future Cybersecurity Professional</h2>
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-    <h2>About Me</h2>
+    <nav>
 
-    <p>
-        I am developing skills in cybersecurity,
-        technology, research and communication.
-    </p>
+        <div class="container nav-container">
 
-    <h2>My Projects</h2>
+            <a href="#home" class="logo">
+                H<span>.</span>
+            </a>
 
-    <p>Cybersecurity Handbook</p>
-    <p>Research Project</p>
-    <p>Data Dashboard</p>
+            <ul class="nav-links">
 
-    <h2>Skills</h2>
+                <li>
+                    <a href="#about">About</a>
+                </li>
 
-    <p>Research</p>
-    <p>Writing</p>
-    <p>HTML</p>
-    <p>Data Analysis</p>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#goals">Goals</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="tag">
+                        Student • Builder • Learner
+                    </div>
+
+                    <h1>
+                        I'm <span>Haneef.</span>
+                    </h1>
+
+                    <p>
+                        A student building skills in cybersecurity,
+                        technology, research, communication and digital
+                        creation — one project at a time.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="#projects"
+                           class="button button-primary">
+                            View My Projects
+                        </a>
+
+                        <a href="#about"
+                           class="button button-secondary">
+                            About Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-label">
+                    01 — About
+                </div>
+
+                <h2 class="section-title">
+                    Building for the future.
+                </h2>
+
+                <p class="section-description">
+                    This portfolio documents the skills, projects and
+                    knowledge I am developing.
+                </p>
+
+
+                <div class="about-box">
+
+                    <p>
+                        I'm a student interested in technology,
+                        cybersecurity and problem-solving.
+                    </p>
+
+                    <p>
+                        Rather than only consuming information,
+                        I'm focused on turning what I learn into
+                        real projects.
+                    </p>
+
+                    <p>
+                        This website is my digital record of that
+                        progress.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SKILLS
+        ========================= -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-label">
+                    02 — Skills
+                </div>
+
+                <h2 class="section-title">
+                    What I'm developing
+                </h2>
+
+                <p class="section-description">
+                    These are skills I'm actively learning and
+                    strengthening through projects.
+                </p>
+
+
+                <div class="skills-grid">
+
+
+                    <div class="skill">
+
+                        <h3>🛡️ Cybersecurity</h3>
+
+                        <p>
+                            Learning cybersecurity concepts,
+                            online safety, threats and defensive
+                            thinking.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <h3>💻 Web Development</h3>
+
+                        <p>
+                            Learning HTML, CSS and eventually
+                            JavaScript to build useful websites.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <h3>📊 Data & Analysis</h3>
+
+                        <p>
+                            Using spreadsheets, datasets,
+                            calculations and visualisation to
+                            understand information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <h3>✍️ Communication</h3>
+
+                        <p>
+                            Improving writing, research,
+                            presentations and clear thinking.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <h3>🎨 Digital Design</h3>
+
+                        <p>
+                            Developing visual communication,
+                            layouts and digital graphics.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        <h3>🌍 Research</h3>
+
+                        <p>
+                            Learning how to investigate questions,
+                            evaluate information and present
+                            conclusions.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECTS
+        ========================= -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-label">
+                    03 — Projects
+                </div>
+
+                <h2 class="section-title">
+                    Things I've built
+                </h2>
+
+                <p class="section-description">
+                    A collection of projects created while learning
+                    new skills.
+                </p>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJECT 1 -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            🛡️
+                        </div>
+
+                        <h3>
+                            Cybersecurity Beginner Handbook
+                        </h3>
+
+                        <p>
+                            A guide explaining common cybersecurity
+                            concepts, threats and online safety.
+                        </p>
+
+                        <a href="#"
+                           class="project-link">
+                            VIEW PROJECT →
+                        </a>
+
+                    </div>
+
+
+                    <!-- PROJECT 2 -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Student Performance Dashboard
+                        </h3>
+
+                        <p>
+                            A spreadsheet project analysing
+                            fictional student performance data.
+                        </p>
+
+                        <a href="#"
+                           class="project-link">
+                            VIEW PROJECT →
+                        </a>
+
+                    </div>
+
+
+                    <!-- PROJECT 3 -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            🌍
+                        </div>
+
+                        <h3>
+                            Internet Access in Nigerian Education
+                        </h3>
+
+                        <p>
+                            A research project examining how
+                            internet access can affect students.
+                        </p>
+
+                        <a href="#"
+                           class="project-link">
+                            READ RESEARCH →
+                        </a>
+
+                    </div>
+
+
+                    <!-- PROJECT 4 -->
+
+                    <div class="project-card">
+
+                        <div class="project-icon">
+                            🎨
+                        </div>
+
+                        <h3>
+                            Design Portfolio
+                        </h3>
+
+                        <p>
+                            A collection of my strongest digital
+                            design projects.
+                        </p>
+
+                        <a href="#"
+                           class="project-link">
+                            VIEW DESIGNS →
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             GOALS
+        ========================= -->
+
+        <section id="goals">
+
+            <div class="container">
+
+                <div class="section-label">
+                    04 — Direction
+                </div>
+
+                <h2 class="section-title">
+                    Where I'm heading
+                </h2>
+
+                <p class="section-description">
+                    The long-term goal is simple: keep building
+                    useful skills and producing evidence of them.
+                </p>
+
+
+                <div class="goals">
+
+
+                    <div class="goal">
+
+                        <h3>Cybersecurity</h3>
+
+                        <p>
+                            Build a strong technical foundation
+                            and eventually work professionally
+                            in cybersecurity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal">
+
+                        <h3>Technology</h3>
+
+                        <p>
+                            Become capable of building useful
+                            digital products and solving
+                            real problems.
+                        </p>
+
+                    </div>
+
+
+                    <div class="goal">
+
+                        <h3>Continuous Learning</h3>
+
+                        <p>
+                            Turn curiosity into consistent
+                            projects, knowledge and measurable
+                            progress.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <div class="section-label">
+                        05 — Contact
+                    </div>
+
+                    <h2 class="section-title">
+                        Let's connect.
+                    </h2>
+
+                    <p>
+                        This portfolio is still being developed.
+                        More projects will be added as I learn
+                        and build.
+                    </p>
+
+                    <a href="mailto: @idrismahe20@gmail.com"
+                       class="button button-primary">
+                        CONTACT ME
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Haneef. Built while learning.
+            </p>
+
+        </div>
+
+    </footer>
+
 
 </body>
 </html>
