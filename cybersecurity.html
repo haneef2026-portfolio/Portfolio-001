@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Cybersecurity Beginner Handbook</title>  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #070d19;
+      color: #e5e7eb;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0b1120, #0f172a);
+      border-bottom: 1px solid #1e293b;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      color: #38bdf8;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .back {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .back:hover {
+      color: #38bdf8;
+    }
+
+    /* Main */
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .shield {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 56px);
+      margin: 0;
+      color: white;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 20px auto;
+      color: #94a3b8;
+      font-size: 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 7px 14px;
+      border: 1px solid #164e63;
+      border-radius: 999px;
+      color: #38bdf8;
+      background: #082f49;
+      font-size: 13px;
+    }
+
+    /* Topic navigation */
+    .topic-nav {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 25px;
+      margin: 30px 0;
+    }
+
+    .topic-nav h2 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .topic-link {
+      display: block;
+      padding: 14px 16px;
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+
+    .topic-link:hover {
+      transform: translateY(-3px);
+      border-color: #38bdf8;
+      color: #38bdf8;
+      background: #0c1a2b;
+    }
+
+    /* Content boxes */
+    .box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      padding: 30px;
+      border-radius: 18px;
+      margin-top: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .box h2 {
+      color: #38bdf8;
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .box h3 {
+      color: #f8fafc;
+      margin-top: 25px;
+    }
+
+    .box p,
+    .box li {
+      color: #cbd5e1;
+    }
+
+    .box ul {
+      padding-left: 22px;
+    }
+
+    .tip {
+      margin-top: 20px;
+      padding: 16px;
+      border-left: 4px solid #38bdf8;
+      background: #082f49;
+      border-radius: 8px;
+    }
+
+    .tip strong {
+      color: #38bdf8;
+    }
+
+    /* Back to top */
+    .top-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 9px 15px;
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .top-button:hover {
+      color: #38bdf8;
+      border-color: #38bdf8;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 15px;
+      }
+
+      .hero {
+        padding: 25px 10px;
+      }
+
+      .box {
+        padding: 22px;
+      }
+
+      .box h2 {
+        font-size: 24px;
+      }
+    }
+  </style></head><body id="top">  <!-- Navigation -->  <header>
+    <div class="nav">
+      <div class="logo">🛡️ CYBER HANDBOOK</div>  <a class="back" href="index.html">
+    ← Back to Portfolio
+  </a>
+</div>
+
+  </header>  <main class="container"><!-- Hero -->
+<section class="hero">
+
+  <div class="shield">🛡️</div>
+
+  <h1>Cybersecurity Beginner Handbook</h1>
+
+  <p class="subtitle">
+    A beginner-friendly guide to understanding cybersecurity,
+    protecting your accounts, recognizing online threats,
+    and developing safer digital habits.
+  </p>
+
+  <span class="badge">BEGINNER LEVEL • CYBERSECURITY</span>
+
+</section>
+
+
+<!-- Topic Navigation -->
+<section class="topic-nav">
+
+  <h2>📚 Explore the Handbook</h2>
+
+  <div class="topic-grid">
+
+    <a class="topic-link" href="#passwords">
+      🔐 Strong Passwords
+    </a>
+
+    <a class="topic-link" href="#phishing">
+      🎣 Phishing Awareness
+    </a>
+
+    <a class="topic-link" href="#twofa">
+      🔑 Two-Factor Authentication
+    </a>
+
+    <a class="topic-link" href="#malware">
+      🦠 Malware Basics
+    </a>
+
+    <a class="topic-link" href="#social">
+      🧠 Social Engineering
+    </a>
+
+    <a class="topic-link" href="#browsing">
+      🌐 Safe Browsing
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- Introduction -->
+<section class="box">
+
+  <h2>What is Cybersecurity?</h2>
+
+  <p>
+    Cybersecurity is the practice of protecting computers,
+    networks, accounts, applications, and information from
+    unauthorized access, misuse, disruption, or other digital threats.
+  </p>
+
+  <p>
+    Cybersecurity is not only about advanced hacking techniques.
+    Everyday actions such as using strong passwords, recognizing
+    suspicious messages, and keeping software updated can greatly
+    improve your digital security.
+  </p>
+
+  <div class="tip">
+    <strong>💡 Beginner Tip:</strong>
+    Cybersecurity starts with understanding how attacks happen
+    and learning how to reduce unnecessary risks.
+  </div>
+
+</section>
+
+
+<!-- 1. Passwords -->
+<section class="box" id="passwords">
+
+  <h2>🔐 1. Strong Passwords</h2>
+
+  <p>
+    Passwords are one of the first lines of defense protecting
+    your online accounts. A weak or reused password can make
+    multiple accounts vulnerable if that password is exposed.
+  </p>
+
+  <h3>What makes a password stronger?</h3>
+
+  <ul>
+    <li>Use a long password or passphrase.</li>
+    <li>Avoid obvious personal information.</li>
+    <li>Don't reuse the same password across important accounts.</li>
+    <li>Never share your passwords with other people.</li>
+    <li>Consider using a reputable password manager.</li>
+  </ul>
+
+  <div class="tip">
+    <strong>🛡️ Security Tip:</strong>
+    Your email account deserves especially strong protection
+    because it can often be used to reset other accounts.
+  </div>
+
+  <a class="top-button" href="#top">↑ Back to Topics</a>
+
+</section>
+
+
+<!-- 2. Phishing -->
+<section class="box" id="phishing">
+
+  <h2>🎣 2. Phishing Awareness</h2>
+
+  <p>
+    Phishing is a form of social engineering where someone
+    attempts to trick you into revealing information, clicking
+    a harmful link, downloading something unsafe, or sending
+    money.
+  </p>
+
+  <h3>Common warning signs</h3>
+
+  <ul>
+    <li>Unexpected messages asking for urgent action.</li>
+    <li>Suspicious links or unfamiliar websites.</li>
+    <li>Messages asking for passwords or security codes.</li>
+    <li>Unusual spelling, addresses, or formatting.</li>
+    <li>Offers that seem unusually good or threatening.</li>
+  </ul>
+
+  <div class="tip">
+    <strong>🚨 Think before you click:</strong>
+    If a message creates panic or pressure, slow down and
+    verify who actually sent it.
+  </div>
+
+  <a class="top-button" href="#top">↑ Back to Topics</a>
+
+</section>
+
+
+<!-- 3. 2FA -->
+<section class="box" id="twofa">
+
+  <h2>🔑 3. Two-Factor Authentication</h2>
+
+  <p>
+    Two-factor authentication, commonly called 2FA, adds another
+    layer of security to an account. Instead of relying only on
+    a password, the account requires another verification method.
+  </p>
+
+  <h3>Examples of authentication factors</h3>
+
+  <ul>
+    <li>A password or PIN.</li>
+    <li>An authentication app code.</li>
+    <li>A security key.</li>
+    <li>A verified device or other approved method.</li>
+  </ul>
+
+  <p>
+    Even if someone discovers your password, an additional
+    authentication factor can make unauthorized access more difficult.
+  </p>
+
+  <div class="tip">
+    <strong>🔒 Good Practice:</strong>
+    Enable 2FA on important accounts whenever it is available.
+  </div>
+
+  <a class="top-button" href="#top">↑ Back to Topics</a>
+
+</section>
+
+
+<!-- 4. Malware -->
+<section class="box" id="malware">
+
+  <h2>🦠 4. Malware Basics</h2>
+
+  <p>
+    Malware is malicious software designed to perform harmful
+    or unwanted actions on a device or system.
+  </p>
+
+  <h3>Common types</h3>
+
+  <ul>
+    <li><strong>Virus:</strong> Malicious code that can spread by attaching itself to files or programs.</li>
+
+    <li><strong>Worm:</strong> Malware capable of spreading between systems without requiring the same type of user action as a traditional virus.</li>
+
+    <li><strong>Trojan:</strong> Malware disguised as legitimate software or files.</li>
+
+    <li><strong>Ransomware:</strong> Malware that can restrict access to data or systems and demand payment.</li>
+
+    <li><strong>Spyware:</strong> Software designed to secretly monitor or collect information.</li>
+  </ul>
+
+  <div class="tip">
+    <strong>🛡️ Stay Safer:</strong>
+    Keep your operating system and applications updated and
+    download software only from trustworthy sources.
+  </div>
+
+  <a class="top-button" href="#top">↑ Back to Topics</a>
+
+</section>
+
+
+<!-- 5. Social Engineering -->
+<section class="box" id="social">
+
+  <h2>🧠 5. Social Engineering</h2>
+
+  <p>
+    Social engineering involves manipulating people into
+    performing actions or revealing information that can
+    compromise security.
+  </p>
+
+  <h3>Examples</h3>
+
+  <ul>
+    <li>Someone pretending to be technical support.</li>
+    <li>A fake account pretending to be someone you know.</li>
+    <li>A message creating urgency or fear.</li>
+    <li>Someone asking for confidential information.</li>
+  </ul>
+
+  <p>
+    The important lesson is that cybersecurity is not only
+    about protecting technology. People are also an important
+    part of a security system.
+  </p>
+
+  <div class="tip">
+    <strong>🧠 Remember:</strong>
+    Don't trust a request simply because someone sounds convincing.
+    Verify the request through a trusted method.
+  </div>
+
+  <a class="top-button" href="#top">↑ Back to Topics</a>
+
+</section>
+
+
+<!-- 6. Safe Browsing -->
+<section class="box" id="browsing">
+
+  <h2>🌐 6. Safe Browsing</h2>
+
+  <p>
+    Safe browsing means using the internet carefully and
+    understanding the risks associated with websites,
+    downloads, links, and online accounts.
+  </p>
+
+  <h3>Safer browsing habits</h3>
+
+  <ul>
+    <li>Check the website address before entering sensitive information.</li>
+    <li>Be careful with unexpected downloads.</li>
+    <li>Keep your browser updated.</li>
+    <li>Avoid entering passwords into suspicious websites.</li>
+    <li>Don't automatically trust advertisements or pop-ups.</li>
+    <li>Use secure and trusted networks when possible.</li>
+  </ul>
+
+  <div class="tip">
+    <strong>🌐 Think critically:</strong>
+    A professional-looking website can still be fraudulent.
+    Always consider where a link came from before interacting with it.
+  </div>
+
+  <a class="top-button" href="#top">↑ Back to Topics</a>
+
+</section>
+
+
+<!-- Final section -->
+<section class="box">
+
+  <h2>🎯 Key Takeaways</h2>
+
+  <p>
+    Good cybersecurity is built from multiple layers rather
+    than one perfect security measure.
+  </p>
+
+  <ul>
+    <li>Protect your accounts with strong, unique passwords.</li>
+    <li>Learn how to recognize phishing attempts.</li>
+    <li>Use two-factor authentication when available.</li>
+    <li>Keep your software updated.</li>
+    <li>Be careful about unexpected files and links.</li>
+    <li>Think critically before trusting online requests.</li>
+  </ul>
+
+  <div class="tip">
+    <strong>🚀 Next Step:</strong>
+    Don't stop at reading. Practice identifying suspicious
+    messages, learning basic networking concepts, and
+    understanding how common security technologies work.
+  </div>
+
+</section>
+
+  </main>  <footer>
+    <p>🛡️ Cybersecurity Beginner Handbook</p>
+    <p>Created as a cybersecurity learning project.</p>
+  </footer></body>
+</html>
